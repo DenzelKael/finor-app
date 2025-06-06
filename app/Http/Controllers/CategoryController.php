@@ -28,17 +28,15 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCategoryRequest $request)
-    {
-        //
-    }
+    
 
     /**
      * Display the specified resource.
      */
     public function show(Category $category)
     {
-        //
+    $category = Category::find($category->id); 
+    return view('categories.show', compact('category'));
     }
 
     /**
