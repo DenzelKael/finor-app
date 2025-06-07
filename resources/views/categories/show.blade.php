@@ -15,9 +15,9 @@
             <p><strong>ID:</strong> {{ $category->id }}</p>
             <p><strong>Nombre:</strong> {{ $category->name }}</p>
             <p><strong>Descripción:</strong> {{ $category->descripcion }}</p>
-            <p><strong>Estado:</strong> {{ $category->status ?? 'Sin estado' }}</p>
+            <p><strong>Estado:</strong> {{ $category->status ? 'ACTIVO':'INACTIVO' }}</p>
 
-            <a href="{{ route('category.index') }}" class="btn btn-secondary">Volver al listado</a>
+            <a href="{{ route('categories.index') }}" class="btn btn-secondary">Volver al listado</a>
         </div>
     </div>
 @stop
