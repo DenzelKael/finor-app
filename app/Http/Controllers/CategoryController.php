@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('categories.index',compact('categories'));
+        return view('categories.index', compact('categories'));
     }
 
     /**
@@ -28,15 +28,14 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    
+
 
     /**
      * Display the specified resource.
      */
     public function show(Category $category)
     {
-    $category = Category::find($category->id); 
-    return view('categories.show', compact('category'));
+        return view('categories.show', compact('category'));
     }
 
     /**
