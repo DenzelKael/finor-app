@@ -2,7 +2,6 @@
 210108738 - Roger Hurtado Justiniano
 220089371 - Dainer Yamil Pacheco Mendoza
 223168017 - Alvaro Paredes Vela
-221115315 - Gisela Aldana Franco
 221125035 - Denilson Quichu Llanos
 223168939 - Elvis Tolaba Gutierrez
 222019085 - José Richard Vera Nenaja
@@ -19,4 +18,5 @@
 223013846 - freddy brandon zambrana salmon
 223004669 - Juan Carlos Barba Davalos
 223012718 - Ismael Tejada Paredes
-222018763 - Emerson Luis Rodriguez Fernandez 
+222018763 - Emerson Luis Rodriguez Fernandez
+221115315 - Gisela Aldana Franco
