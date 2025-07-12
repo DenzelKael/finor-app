@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Http\Requests\StoreCategoryRequest;
-use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -22,13 +21,25 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
 
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'descripcion' => 'nullable|string',
+            'status' => 'required|boolean',
+        ]);
+
+        Category::create($validated);
+
+        return redirect()->route('categories.index')->with('success', 'Categoría creada correctamente.');
+    }
 
     /**
      * Display the specified resource.
@@ -38,20 +49,30 @@ class CategoryController extends Controller
         return view('categories.show', compact('category'));
     }
 
+
+
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit', compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(Request $request, Category $category)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'descripcion' => 'nullable|string',
+            'status' => 'required|boolean',
+        ]);
+
+        $category->update($validated);
+
+        return redirect()->route('categories.index')->with('success', 'Categoría actualizada correctamente.');
     }
 
     /**
@@ -59,6 +80,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('categories.index')->with('success', 'Categoría eliminada correctamente.');
     }
 }
